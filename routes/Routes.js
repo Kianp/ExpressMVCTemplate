@@ -1,3 +1,5 @@
+var Controllers = require("../Controllers/Controllers") ;
+
 module.exports = function(app){
 
     // Main Routes
@@ -6,8 +8,6 @@ module.exports = function(app){
         response.render('index') ;
     });
 
-    app.get('/user', function(request, response){
-        response.render('user') ;
-    });
+    app.get('/user', Controllers.userController );
 
 };

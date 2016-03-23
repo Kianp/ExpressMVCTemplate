@@ -8,8 +8,12 @@ var http = require('http');
 var path = require('path');
 var handlebars  = require('express-handlebars'), hbs;
 var app = express();
+var Conf = require('./Conf/Conf') ;
+var Database = require('./Conf/MongoDB') ;
 
-app.set('port', 1337);
+Database.init() ; 
+
+app.set('port', Conf.network.port );
 app.set('views', path.join(__dirname, 'views'));
 
 /* express-handlebars - https://github.com/ericf/express-handlebars
